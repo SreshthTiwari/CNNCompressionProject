@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pruning a small cnn</title>
+<style>
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  :root {
+    --bg: #fdfcf7; --fg: #1a1a1a; --muted: #666055; --line: #cfcabb;
+    --accent: #8c1d1d; --bar: #e6e2d4; --good: #1d6b3a; --bad: #8c1d1d;
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.5; }
+  main { max-width: 700px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { margin: 0 0 8px; font-size: 30px; font-weight: 400; line-height: 1.2; }
+  .lede { margin: 0 0 28px; color: var(--muted); font-style: italic; }
+  button { font: inherit; color: inherit; }
+
+  section { padding: 22px 0; border-top: 1px solid var(--line); }
+  h2 { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
+  .how { margin: 0 0 14px; font-size: 14px; color: var(--muted); max-width: 60ch; }
+
+  .preview { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
+  #big { width: 140px; height: 140px; image-rendering: pixelated; background: #000; flex: none; }
+  .truth { font-size: 14px; color: var(--muted); }
+  .truth strong { display: block; color: var(--fg); font-size: 18px; }
+  .picker { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; }
+  .picker button { padding: 0; border: 2px solid transparent; background: #000; cursor: pointer; width: 100%; aspect-ratio: 1; overflow: hidden; }
+  .picker button[aria-pressed="true"] { border-color: var(--accent); }
+  .picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .picker canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+  @media (max-width: 520px) { .picker { grid-template-columns: repeat(6, 1fr); } }
+
+  .ctrl-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .ctrl-row label { font-weight: 700; }
+  #pv { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 20px; }
+  input[type="range"] { width: 100%; margin: 10px 0 6px; accent-color: var(--accent); }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .chip { font-size: 13px; padding: 0 2px; border: 0; border-bottom: 1px solid var(--fg); background: transparent; cursor: pointer; }
+  .chip:hover { color: var(--accent); border-color: var(--accent); }
+  .toggle { display: flex; gap: 8px; align-items: center; cursor: pointer; font-weight: 700; }
+  .toggle input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+  .hint { color: var(--muted); font-size: 13px; margin: 4px 0 0 24px; max-width: 56ch; }
+
+  .verdict { font-weight: 700; margin: 0 0 12px; min-height: 1.5em; }
+  .verdict.good { color: var(--good); }
+  .verdict.bad { color: var(--bad); }
+  .bars { display: grid; gap: 5px; }
+  .bar-row { display: grid; grid-template-columns: 100px 1fr 44px; gap: 8px; align-items: center; font-size: 13px; }
+  .bar-row .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-row .name.true::after { content: " *"; color: var(--good); }
+  .track { height: 6px; background: var(--bar); overflow: hidden; }
+  .fill { height: 100%; width: 0; background: var(--muted); }
+  .bar-row:not(.top) .fill { opacity: .7; }
+  .bar-row.top .fill { background: var(--accent); }
+  .bar-row.top .name { font-weight: 700; }
+  .pct { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 20px; font-variant-numeric: tabular-nums; line-height: 1.25; }
+  .stat .s { color: var(--muted); font-size: 12px; }
+  .acc-bar { height: 6px; background: var(--bar); margin-top: 6px; overflow: hidden; }
+  .acc-bar div { height: 100%; width: 0; background: var(--accent); }
+  .layers-h { margin: 18px 0 6px; font-size: 12px; color: var(--muted); }
+  .layers { display: grid; gap: 6px; }
+  .layer { display: grid; grid-template-columns: 52px 1fr 130px; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); }
+  .layer .fill { background: var(--accent); opacity: 1 !important; }
+  .layer .n { text-align: right; font-variant-numeric: tabular-nums; }
+  #status { color: var(--muted); font-size: 13px; margin-top: 8px; min-height: 1.4em; }
+  .busy { opacity: .55; }
+  .cap { font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; margin: 0; }
+  .note { color: var(--muted); font-size: 13px; margin-top: 16px; max-width: 72ch; }
+  .note a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>pruning a small cnn</h1>
+  <p class="lede">pick a fashion-mnist test image, remove some of the cnn's weights or round them to int8, and see how its prediction and accuracy change.</p>
+
+  <section>
+    <h2>1. pick an image to test</h2>
+    <p class="how">click a thumbnail to pick an image. the large copy is what the model sees: 28 x 28 pixels, grayscale, and "actual" is the class it really belongs to.</p>
+    <div class="preview">
+      <canvas id="big" width="28" height="28" aria-label="selected test image"></canvas>
+      <div class="truth">actual<strong id="truth">-</strong></div>
+    </div>
+    <div class="picker" id="picker" role="group" aria-label="test images"></div>
+  </section>
+
+  <section>
+    <h2>2. compression</h2>
+    <p class="how">drag the slider to set to zero that share of the weights, smallest first, ranked across the whole network.</p>
+    <div class="ctrl-row">
+      <label for="prune">weights pruned</label>
+      <span id="pv">0%</span>
+    </div>
+    <input type="range" id="prune" min="0" max="99" step="1" value="0">
+    <div class="chips" id="chips"></div>
+    <label class="toggle"><input type="checkbox" id="int8"> int8 weights</label>
+    <p class="hint">check this to round each layer's weights to 255 levels. they are converted back to float for the math, so this only shows the effect of lower precision.</p>
+  </section>
+
+  <section>
+    <h2>3. prediction</h2>
+    <p class="verdict" id="verdict" aria-live="polite"></p>
+    <div class="bars" id="bars"></div>
+  </section>
+
+  <section id="statcard">
+    <h2>4. numbers</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="k">accuracy (500 test imgs)</div>
+        <div class="v" id="acc">-</div>
+        <div class="s" id="accbase">&nbsp;</div>
+        <div class="acc-bar"><div id="accfill"></div></div>
+      </div>
+      <div class="stat">
+        <div class="k">nonzero weights</div>
+        <div class="v" id="nz">-</div>
+        <div class="s" id="nzn">&nbsp;</div>
+      </div>
+      <div class="stat">
+        <div class="k">dense size</div>
+        <div class="v" id="dense">-</div>
+        <div class="s">same at any sparsity</div>
+      </div>
+      <div class="stat">
+        <div class="k">sparse size</div>
+        <div class="v" id="sparse">-</div>
+        <div class="s">nonzeros x (value + 4 byte index)</div>
+      </div>
+    </div>
+    <p class="layers-h">share of each layer's weights still nonzero</p>
+    <div class="layers" id="layers"></div>
+    <div id="status"></div>
+  </section>
+
+  <p class="cap">figure 1. cnn predictions on one fashion-mnist test image after global magnitude pruning and optional int8 quantization. * marks the actual class.</p>
+  <p class="note">seed 0 of 5. accuracy is on 500 test images (50 per class), so it will not match the 5 seed averages in the report. pruning is global: all layers are ranked together, which is why fc1 loses most of its weights. sizes come from formulas, not real files. <a href="https://github.com/SreshthTiwari/CNNCompressionProject">source</a></p>
+</main>
+<script src="model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
