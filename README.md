@@ -4,6 +4,8 @@ Fashion-MNIST + small PyTorch CNN. Compares global magnitude pruning, int8 weigh
 quantization, and both combined; reports accuracy, nonzero fraction, storage size, and
 inference time.
 
+Live demo: https://sreshthtiwari.github.io/CNNCompressionProject/
+
 ## Setup
 ```
 python3 -m venv .venv && source .venv/bin/activate
@@ -27,3 +29,5 @@ python -m src.layer_sparsity       # results/layer_sparsity.{json,png}
 - `src/metrics.py` sparsity, size (dense / ideal-sparse / zlib), latency
 - `src/run_experiments.py`, `src/plots.py`
 - `src/layer_sparsity.py` per-layer nonzero fraction under global pruning
+- `src/export_web.py` exports seed 0 weights and test images to `docs/data/`
+- `docs/` web demo (static, served by GitHub Pages)
