@@ -1,0 +1,1017 @@
+[
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.0,
+    "accuracy": 0.9127,
+    "nonzero_fraction": 1.0,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1654632,
+      "zlib_fp32": 770963
+    },
+    "inference_s": 0.18769062496721745
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.0,
+    "accuracy": 0.9121,
+    "nonzero_fraction": 0.951924193173903,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1575120,
+      "zlib_fp32": 226631,
+      "dense_int8": 207496,
+      "sparse_int8": 984745,
+      "zlib_int8": 152528
+    },
+    "inference_s": 0.1870246249406288
+  },
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.25,
+    "accuracy": 0.9133,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 629224
+    },
+    "inference_s": 0.1874785696466764
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.25,
+    "accuracy": 0.9127,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 206595,
+      "dense_int8": 207496,
+      "sparse_int8": 776020,
+      "zlib_int8": 140287
+    },
+    "inference_s": 0.18525436132525405
+  },
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.5,
+    "accuracy": 0.9107,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 451879
+    },
+    "inference_s": 0.18521198630332947
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.5,
+    "accuracy": 0.9105,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 163304,
+      "dense_int8": 207496,
+      "sparse_int8": 517600,
+      "zlib_int8": 109352
+    },
+    "inference_s": 0.18585806945338845
+  },
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.75,
+    "accuracy": 0.8897,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 267301
+    },
+    "inference_s": 0.1865631528198719
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.75,
+    "accuracy": 0.8882,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 104618,
+      "dense_int8": 207496,
+      "sparse_int8": 259180,
+      "zlib_int8": 68716
+    },
+    "inference_s": 0.18508913864692053
+  },
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.9,
+    "accuracy": 0.7816,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 143948
+    },
+    "inference_s": 0.18520752767411372
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.9,
+    "accuracy": 0.7829,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 53703,
+      "dense_int8": 207496,
+      "sparse_int8": 104130,
+      "zlib_int8": 34594
+    },
+    "inference_s": 0.1855395973349611
+  },
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.95,
+    "accuracy": 0.5598,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 96881
+    },
+    "inference_s": 0.18522927762630084
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.95,
+    "accuracy": 0.5594,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 31654,
+      "dense_int8": 207496,
+      "sparse_int8": 52445,
+      "zlib_int8": 20119
+    },
+    "inference_s": 0.18540027807466686
+  },
+  {
+    "seed": 0,
+    "method": "prune",
+    "prune_amount": 0.99,
+    "accuracy": 0.1816,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 56099
+    },
+    "inference_s": 0.18634084705263376
+  },
+  {
+    "seed": 0,
+    "method": "prune+int8",
+    "prune_amount": 0.99,
+    "accuracy": 0.1829,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 10073,
+      "dense_int8": 207496,
+      "sparse_int8": 11100,
+      "zlib_int8": 6197
+    },
+    "inference_s": 0.1857909580382208
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.0,
+    "accuracy": 0.912,
+    "nonzero_fraction": 1.0,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1654632,
+      "zlib_fp32": 771100
+    },
+    "inference_s": 0.18609829169387618
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.0,
+    "accuracy": 0.9117,
+    "nonzero_fraction": 0.932280783221113,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1542632,
+      "zlib_fp32": 208059,
+      "dense_int8": 207496,
+      "sparse_int8": 964440,
+      "zlib_int8": 142537
+    },
+    "inference_s": 0.18485280529906353
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.25,
+    "accuracy": 0.9126,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 629371
+    },
+    "inference_s": 0.18497661097596088
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.25,
+    "accuracy": 0.9127,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 193671,
+      "dense_int8": 207496,
+      "sparse_int8": 776020,
+      "zlib_int8": 133345
+    },
+    "inference_s": 0.18590311100706458
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.5,
+    "accuracy": 0.9125,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 452567
+    },
+    "inference_s": 0.18642606927702823
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.5,
+    "accuracy": 0.9124,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 153816,
+      "dense_int8": 207496,
+      "sparse_int8": 517600,
+      "zlib_int8": 104872
+    },
+    "inference_s": 0.1852190833693991
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.75,
+    "accuracy": 0.9029,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 266139
+    },
+    "inference_s": 0.18570048633652428
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.75,
+    "accuracy": 0.9029,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 98997,
+      "dense_int8": 207496,
+      "sparse_int8": 259180,
+      "zlib_int8": 65389
+    },
+    "inference_s": 0.19446694455109537
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.9,
+    "accuracy": 0.7637,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 143232
+    },
+    "inference_s": 0.1882061529904604
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.9,
+    "accuracy": 0.7637,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 51757,
+      "dense_int8": 207496,
+      "sparse_int8": 104130,
+      "zlib_int8": 33425
+    },
+    "inference_s": 0.18611609702929854
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.95,
+    "accuracy": 0.5477,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 96435
+    },
+    "inference_s": 0.18498037507136664
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.95,
+    "accuracy": 0.548,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 30714,
+      "dense_int8": 207496,
+      "sparse_int8": 52445,
+      "zlib_int8": 19638
+    },
+    "inference_s": 0.18523915290522078
+  },
+  {
+    "seed": 1,
+    "method": "prune",
+    "prune_amount": 0.99,
+    "accuracy": 0.1813,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 55737
+    },
+    "inference_s": 0.20974330596315363
+  },
+  {
+    "seed": 1,
+    "method": "prune+int8",
+    "prune_amount": 0.99,
+    "accuracy": 0.1816,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 9560,
+      "dense_int8": 207496,
+      "sparse_int8": 11100,
+      "zlib_int8": 6090
+    },
+    "inference_s": 0.2466689303983003
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.0,
+    "accuracy": 0.9134,
+    "nonzero_fraction": 1.0,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1654632,
+      "zlib_fp32": 771415
+    },
+    "inference_s": 0.18723659737346074
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.0,
+    "accuracy": 0.9129,
+    "nonzero_fraction": 0.9614000464360344,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1590792,
+      "zlib_fp32": 238411,
+      "dense_int8": 207496,
+      "sparse_int8": 994540,
+      "zlib_int8": 159064
+    },
+    "inference_s": 0.18600531931345662
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.25,
+    "accuracy": 0.9139,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 629595
+    },
+    "inference_s": 0.1903637640643865
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.25,
+    "accuracy": 0.9133,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 217730,
+      "dense_int8": 207496,
+      "sparse_int8": 776020,
+      "zlib_int8": 146207
+    },
+    "inference_s": 0.19101805534834662
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.5,
+    "accuracy": 0.9095,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 452092
+    },
+    "inference_s": 0.21162063931114972
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.5,
+    "accuracy": 0.9092,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 172005,
+      "dense_int8": 207496,
+      "sparse_int8": 517600,
+      "zlib_int8": 113234
+    },
+    "inference_s": 0.18708320792453983
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.75,
+    "accuracy": 0.8882,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 266891
+    },
+    "inference_s": 0.1863115696081271
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.75,
+    "accuracy": 0.8879,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 107927,
+      "dense_int8": 207496,
+      "sparse_int8": 259180,
+      "zlib_int8": 69973
+    },
+    "inference_s": 0.18858248608497283
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.9,
+    "accuracy": 0.7267,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 143435
+    },
+    "inference_s": 0.20418284740298986
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.9,
+    "accuracy": 0.7272,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 55282,
+      "dense_int8": 207496,
+      "sparse_int8": 104130,
+      "zlib_int8": 35219
+    },
+    "inference_s": 0.19226795830763876
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.95,
+    "accuracy": 0.4115,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 96638
+    },
+    "inference_s": 0.1896462496370077
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.95,
+    "accuracy": 0.413,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 32472,
+      "dense_int8": 207496,
+      "sparse_int8": 52445,
+      "zlib_int8": 20589
+    },
+    "inference_s": 0.18922274963309368
+  },
+  {
+    "seed": 2,
+    "method": "prune",
+    "prune_amount": 0.99,
+    "accuracy": 0.1386,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 55778
+    },
+    "inference_s": 0.19807462502891818
+  },
+  {
+    "seed": 2,
+    "method": "prune+int8",
+    "prune_amount": 0.99,
+    "accuracy": 0.139,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 10207,
+      "dense_int8": 207496,
+      "sparse_int8": 11100,
+      "zlib_int8": 6301
+    },
+    "inference_s": 0.19554281933233142
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.0,
+    "accuracy": 0.9079,
+    "nonzero_fraction": 1.0,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1654632,
+      "zlib_fp32": 771130
+    },
+    "inference_s": 0.20987112532990673
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.0,
+    "accuracy": 0.9084,
+    "nonzero_fraction": 0.9514985295255786,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1574416,
+      "zlib_fp32": 225456,
+      "dense_int8": 207496,
+      "sparse_int8": 984305,
+      "zlib_int8": 152319
+    },
+    "inference_s": 0.20642168098129332
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.25,
+    "accuracy": 0.91,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 629239
+    },
+    "inference_s": 0.19115991642077765
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.25,
+    "accuracy": 0.9093,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 205912,
+      "dense_int8": 207496,
+      "sparse_int8": 776020,
+      "zlib_int8": 139933
+    },
+    "inference_s": 0.19731222240564725
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.5,
+    "accuracy": 0.9095,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 453218
+    },
+    "inference_s": 0.19794219468409815
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.5,
+    "accuracy": 0.91,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 163509,
+      "dense_int8": 207496,
+      "sparse_int8": 517600,
+      "zlib_int8": 109095
+    },
+    "inference_s": 0.210115236385415
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.75,
+    "accuracy": 0.8943,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 266617
+    },
+    "inference_s": 0.19045870836513737
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.75,
+    "accuracy": 0.8944,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 103866,
+      "dense_int8": 207496,
+      "sparse_int8": 259180,
+      "zlib_int8": 67811
+    },
+    "inference_s": 0.1911798056680709
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.9,
+    "accuracy": 0.8268,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 143707
+    },
+    "inference_s": 0.1979902773940315
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.9,
+    "accuracy": 0.8268,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 53681,
+      "dense_int8": 207496,
+      "sparse_int8": 104130,
+      "zlib_int8": 34441
+    },
+    "inference_s": 0.19858512507441142
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.95,
+    "accuracy": 0.5972,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 96815
+    },
+    "inference_s": 0.19194606939951578
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.95,
+    "accuracy": 0.5981,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 31770,
+      "dense_int8": 207496,
+      "sparse_int8": 52445,
+      "zlib_int8": 20014
+    },
+    "inference_s": 0.20625331928022206
+  },
+  {
+    "seed": 3,
+    "method": "prune",
+    "prune_amount": 0.99,
+    "accuracy": 0.1862,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 55978
+    },
+    "inference_s": 0.21411906896779934
+  },
+  {
+    "seed": 3,
+    "method": "prune+int8",
+    "prune_amount": 0.99,
+    "accuracy": 0.1852,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 10013,
+      "dense_int8": 207496,
+      "sparse_int8": 11100,
+      "zlib_int8": 6151
+    },
+    "inference_s": 0.2054534999964138
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.0,
+    "accuracy": 0.9104,
+    "nonzero_fraction": 1.0,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1654632,
+      "zlib_fp32": 770616
+    },
+    "inference_s": 0.33850006968714297
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.0,
+    "accuracy": 0.9105,
+    "nonzero_fraction": 0.9353861930191162,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1547768,
+      "zlib_fp32": 207586,
+      "dense_int8": 207496,
+      "sparse_int8": 967650,
+      "zlib_int8": 141953
+    },
+    "inference_s": 0.3212800279725343
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.25,
+    "accuracy": 0.9107,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 628864
+    },
+    "inference_s": 0.309445222451662
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.25,
+    "accuracy": 0.9104,
+    "nonzero_fraction": 0.75,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 1241160,
+      "zlib_fp32": 192621,
+      "dense_int8": 207496,
+      "sparse_int8": 776020,
+      "zlib_int8": 133074
+    },
+    "inference_s": 0.3102994030341506
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.5,
+    "accuracy": 0.9102,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 452668
+    },
+    "inference_s": 0.3193901809863746
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.5,
+    "accuracy": 0.9103,
+    "nonzero_fraction": 0.5,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 827688,
+      "zlib_fp32": 152797,
+      "dense_int8": 207496,
+      "sparse_int8": 517600,
+      "zlib_int8": 104708
+    },
+    "inference_s": 0.3158829864114523
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.75,
+    "accuracy": 0.9062,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 266868
+    },
+    "inference_s": 0.3622759723414977
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.75,
+    "accuracy": 0.9055,
+    "nonzero_fraction": 0.25,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 414216,
+      "zlib_fp32": 98193,
+      "dense_int8": 207496,
+      "sparse_int8": 259180,
+      "zlib_int8": 65461
+    },
+    "inference_s": 0.41141729165489477
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.9,
+    "accuracy": 0.8224,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 143710
+    },
+    "inference_s": 0.3436992493613313
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.9,
+    "accuracy": 0.8232,
+    "nonzero_fraction": 0.1000019348347651,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 166136,
+      "zlib_fp32": 51291,
+      "dense_int8": 207496,
+      "sparse_int8": 104130,
+      "zlib_int8": 33082
+    },
+    "inference_s": 0.3110867911018431
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.95,
+    "accuracy": 0.661,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 96454
+    },
+    "inference_s": 0.315625819688042
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.95,
+    "accuracy": 0.6604,
+    "nonzero_fraction": 0.05000096741738255,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 83440,
+      "zlib_fp32": 30515,
+      "dense_int8": 207496,
+      "sparse_int8": 52445,
+      "zlib_int8": 19457
+    },
+    "inference_s": 0.3244485140312463
+  },
+  {
+    "seed": 4,
+    "method": "prune",
+    "prune_amount": 0.99,
+    "accuracy": 0.242,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 55929
+    },
+    "inference_s": 0.23026984666163722
+  },
+  {
+    "seed": 4,
+    "method": "prune+int8",
+    "prune_amount": 0.99,
+    "accuracy": 0.2417,
+    "nonzero_fraction": 0.010003095735624178,
+    "sizes": {
+      "dense_fp32": 827688,
+      "sparse_fp32": 17288,
+      "zlib_fp32": 9544,
+      "dense_int8": 207496,
+      "sparse_int8": 11100,
+      "zlib_int8": 6030
+    },
+    "inference_s": 0.2440040832540641
+  }
+]
