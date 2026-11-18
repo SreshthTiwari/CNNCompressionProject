@@ -31,3 +31,7 @@ python -m src.layer_sparsity       # results/layer_sparsity.{json,png}
 - `src/layer_sparsity.py` per-layer nonzero fraction under global pruning
 - `src/export_web.py` exports seed 0 weights and test images to `docs/data/`
 - `docs/` web demo (static, served by GitHub Pages)
+
+## What AI was used for
+- Coming up with limitations for this project
+- Building the web app to preview the project
