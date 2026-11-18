@@ -112,3 +112,15 @@ the oversized `fc1` layer, not the whole network equally.
 Brains are sparse. A neuron connects to only a very small fraction of the other neurons, and synapses are thought to be noisy (so they can't hold very precise values). This network kept its accuracy with half of its weights removed and with 8 bit weights, which fits the idea that a lot of connections and precision aren't needed for a task like this. Brains also lose many synapses during development, which is slightly similar to pruning.
 
 I don't want to take this too far. Pruning a trained network by weight size is an engineering method and one small CNN on Fashion MNIST can't really say anything about real neural circuits. The accuracy collapse past 90% also shows there's a limit to how sparse this network can get.
+
+## 5. Limitations
+
+- One small CNN on one small, easy dataset; results probably don't carry over to larger models, other
+  tasks, or models with less spare capacity.
+- I didn't retrain the model after pruning. Retraining might help recover some of the lost accuracy, especially at higher pruning levels.
+- Global unstructured magnitude pruning only; no structured pruning. Per layer sparsity is reported, but
+  I didn't test pruning layer by layer or prune layers by themselves.
+- Quantization is done after training, simulated, symmetric per tensor, weights only (activations stay float).
+  Training with quantization in mind, and per channel scales, could do better.
+- Final accuracy is measured on the test set with no separate validation set. No settings were
+  tuned against it, but a stricter setup would hold out a separate validation set.
