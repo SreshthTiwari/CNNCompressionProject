@@ -18,6 +18,8 @@
   button { font: inherit; color: inherit; }
 
   section { padding: 22px 0; border-top: 1px solid var(--line); }
+  .pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 36px; }
+  @media (max-width: 720px) { .pair { grid-template-columns: minmax(0, 1fr); gap: 0; } }
   h2 { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
   .how { margin: 0 0 14px; font-size: 14px; color: var(--muted); max-width: 60ch; }
 
@@ -90,6 +92,7 @@
     <div class="picker" id="picker" role="group" aria-label="test images"></div>
   </section>
 
+  <div class="pair">
   <section>
     <h2>2. compression</h2>
     <p class="how">drag the slider to set to zero that share of the weights, smallest first, ranked across the whole network.</p>
@@ -108,6 +111,7 @@
     <p class="verdict" id="verdict" aria-live="polite"></p>
     <div class="bars" id="bars"></div>
   </section>
+  </div>
 
   <section id="statcard">
     <h2>4. numbers</h2>
