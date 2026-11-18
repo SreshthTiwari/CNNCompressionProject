@@ -6,6 +6,8 @@ inference time.
 
 Live demo: https://sreshthtiwari.github.io/CNNCompressionProject/
 
+Results are discussed in `REPORT.md`
+
 ## Setup
 ```
 python3 -m venv .venv && source .venv/bin/activate
