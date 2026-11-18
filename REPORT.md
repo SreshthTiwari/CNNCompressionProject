@@ -124,3 +124,8 @@ I don't want to take this too far. Pruning a trained network by weight size is a
   Training with quantization in mind, and per channel scales, could do better.
 - Final accuracy is measured on the test set with no separate validation set. No settings were
   tuned against it, but a stricter setup would hold out a separate validation set.
+
+## 6. Reproducing
+
+See `README.md`. `python -m src.run_experiments && python -m src.plots && python -m src.layer_sparsity` regenerates the
+numbers and figures. It reuses the saved baseline models in `results/` if they exist, so delete those first to retrain from scratch.
