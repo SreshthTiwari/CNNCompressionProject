@@ -33,5 +33,5 @@ python -m src.layer_sparsity       # results/layer_sparsity.{json,png}
 - `docs/` web demo (static, served by GitHub Pages)
 
 ## What AI was used for
-- Coming up with limitations for this project
-- Building the web app to preview the project
+- I used AI to help come up with the limitations section in the report.
+- Also used it to write the css and javascript for the demo web app that previews this project.
