@@ -23,16 +23,17 @@
   h2 { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
   .how { margin: 0 0 14px; font-size: 14px; color: var(--muted); max-width: 60ch; }
 
-  .preview { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
-  #big { width: 140px; height: 140px; image-rendering: pixelated; background: #000; flex: none; }
-  .truth { font-size: 14px; color: var(--muted); }
+  .preview { display: flex; gap: 24px; align-items: flex-start; }
+  .chosen { flex: none; width: 140px; }
+  #big { display: block; width: 140px; height: 140px; image-rendering: pixelated; background: #000; }
+  .truth { margin-top: 8px; font-size: 14px; color: var(--muted); }
   .truth strong { display: block; color: var(--fg); font-size: 18px; }
-  .picker { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; }
+  .picker { flex: 1; min-width: 0; display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; }
   .picker button { padding: 0; border: 2px solid transparent; background: #000; cursor: pointer; width: 100%; aspect-ratio: 1; overflow: hidden; }
   .picker button[aria-pressed="true"] { border-color: var(--accent); }
   .picker button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .picker canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
-  @media (max-width: 520px) { .picker { grid-template-columns: repeat(6, 1fr); } }
+  @media (max-width: 600px) { .preview { flex-direction: column; gap: 14px; } .picker { width: 100%; grid-template-columns: repeat(6, 1fr); } }
 
   .ctrl-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .ctrl-row label { font-weight: 700; }
@@ -86,10 +87,12 @@
     <h2>1. pick an image to test</h2>
     <p class="how">click a thumbnail to pick an image. the large copy is what the model sees: 28 x 28 pixels, grayscale, and "actual" is the class it really belongs to.</p>
     <div class="preview">
-      <canvas id="big" width="28" height="28" aria-label="selected test image"></canvas>
-      <div class="truth">actual<strong id="truth">-</strong></div>
+      <div class="chosen">
+        <canvas id="big" width="28" height="28" aria-label="selected test image"></canvas>
+        <div class="truth">actual<strong id="truth">-</strong></div>
+      </div>
+      <div class="picker" id="picker" role="group" aria-label="test images"></div>
     </div>
-    <div class="picker" id="picker" role="group" aria-label="test images"></div>
   </section>
 
   <div class="pair">
