@@ -22,9 +22,11 @@ def main(inp="results/results.json"):
     rows = json.load(open(inp))
     n = len({r["seed"] for r in rows})
 
-    for m, label in [("prune", "pruning only (fp32)"), ("prune+int8", "pruning + int8")]:
+    styles = [("prune", "pruning only (fp32)", dict(lw=5, ms=12, mfc="none", mew=2, capsize=7, alpha=.85)),
+              ("prune+int8", "pruning + int8", dict(lw=1.5, ms=4, ls="--", capsize=3))]
+    for m, label, kw in styles:
         x, mu, sd = agg(rows, m, lambda r: r["accuracy"] * 100)
-        plt.errorbar(x, mu, yerr=sd, marker="o", capsize=3, label=label)
+        plt.errorbar(x, mu, yerr=sd, marker="o", label=label, **kw)
     plt.xlabel("weights pruned (%)"); plt.ylabel("test accuracy (%)")
     plt.title(f"Accuracy vs. compression (mean ± std, n={n} seeds)")
     plt.grid(alpha=.3); plt.legend()
